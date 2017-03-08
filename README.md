@@ -1,2 +1,3 @@
 # dice.jamesrock.me
-digital dice
+
+dice. add as many 'players' as you like.
