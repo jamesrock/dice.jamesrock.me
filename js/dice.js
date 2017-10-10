@@ -10,85 +10,62 @@
 		},
 		roll: function() {
 
-			return ROCK.MATH.random(this.min, this.max);
+			var
+			dice = this,
+			timeout,
+			count = 0,
+			time = 0,
+			outcome,
+			newOutcome,
+			startTimeout = function() {
+
+				clearTimeout(timeout);
+
+				timeout = setTimeout(function() {
+
+					newOutcome = ROCK.MATH.random(dice.min, dice.max);
+
+					while(newOutcome===outcome) {
+
+						console.log('dupe');
+
+						newOutcome = ROCK.MATH.random(dice.min, dice.max);
+
+					};
+
+					outcome = newOutcome;
+
+					outcomeNode.setAttribute("data-number", outcome);
+
+					time = (time + 10);
+
+					if(count<30) {
+
+						startTimeout();
+
+					};
+
+					count ++;
+
+				}, time);
+
+			};
+
+			startTimeout();
+
+			return this;
 
 		}
 	}),
-	players = [
-		"mummy",
-		"daddy",
-		"harris",
-		"arran"
-	],
-	player = 0,
-	addPlayerButton = ROCK.DOM.getNode("addPlayer"),
-	clearPlayersButton = ROCK.DOM.getNode("clearPlayers"),
-	rollButton = ROCK.DOM.getNode("roll"),
 	outcomeNode = ROCK.DOM.getNode("outcome"),
-	nameNode = ROCK.DOM.getNode("name"),
-	playerListNode = ROCK.DOM.getNode("playerList"),
 	dice = new Dice();
 
-	addPlayerButton.addEventListener("click", function(e) {
+	outcomeNode.addEventListener("click", function(e) {
 
-		var
-		name = prompt("player name");
-
-		if(name) {
-
-			players.push(name);
-
-			playerListNode.innerHTML = players.join("<br/>");
-
-		};
-
-		player = 0;
-
-		// console.log(players);
-
-	});
-
-	clearPlayersButton.addEventListener("click", function() {
-
-		players = [];
-
-		playerListNode.innerHTML = players.join("<br/>");
-
-		// console.log(players);
-
-	});
-
-	outcomeNode.addEventListener("touchstart", function(e) {
-
-		outcomeNode.innerHTML = "";
+		dice.roll();
 
 		e.preventDefault();
 
 	});
-
-	outcomeNode.addEventListener("touchend", function(e) {
-
-		var
-		outcome = dice.roll();
-
-		outcomeNode.innerHTML = outcome;
-		nameNode.innerHTML = players[player];
-
-		if(outcome===6) {
-			return;
-		};
-
-		if(player<(players.length-1)) {
-			player ++;
-		}
-		else {
-			player = 0;
-		};
-
-		e.preventDefault();
-
-	});
-
-	playerListNode.innerHTML = players.join("<br/>");
 
 })();

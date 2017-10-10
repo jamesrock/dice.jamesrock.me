@@ -9,10 +9,10 @@ html {
 
 body {
   font-family: sans-serif;
-  font-size: 18px;
   text-align: center;
   text-transform: uppercase;
   color: #333;
+	padding-top: 100px;
 }
 
 html,
@@ -20,58 +20,47 @@ body {
   height: 100%;
 }
 
-button {
-	font-size: inherit;
-	font-family: inherit;
-	text-transform: inherit;
-	padding: 6px 25px;
-	border-radius: 5px;
-	border-color: sienna;
-	border: solid 1px grey;
-  background-color: white;
-}
-
-#name {
-	font-size: 50px;
-}
-
 #outcome {
-	font-size: 200px;
-	height: 100%;
+	width: 420px;
+	height: 420px;
+	margin: 0 auto;
+	cursor: pointer;
 }
 
-#playerList {
-	padding: 10px;
+#outcome div {
+	float: left;
+	width: 100px;
+	height: 100px;
+	background-color: #EEE;
+	border-radius: 100%;
+	margin: 20px;
 }
 
-.spacer {
-	height: 5px;
+#outcome [data-value="1"],
+#outcome [data-value="7"] {
+	/*background-color: transparent;*/
 }
 
-.clear {
-	clear: both;
-}
-
-.left {
-	padding-top: 50px;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-@media (orientation: portrait) {
-
-	.right {
-		display: none;
-	}
-
-}
-
-@media (orientation: landscape) {
-
-	.left,
-	.right {
-		width: 50%;
-		float: left;
-	}
-
+#outcome[data-number="1"] [data-value="4"],
+#outcome[data-number="2"] [data-value="0"],
+#outcome[data-number="2"] [data-value="8"],
+#outcome[data-number="3"] [data-value="0"],
+#outcome[data-number="3"] [data-value="4"],
+#outcome[data-number="3"] [data-value="8"],
+#outcome[data-number="4"] [data-value="0"],
+#outcome[data-number="4"] [data-value="2"],
+#outcome[data-number="4"] [data-value="6"],
+#outcome[data-number="4"] [data-value="8"],
+#outcome[data-number="5"] [data-value="0"],
+#outcome[data-number="5"] [data-value="2"],
+#outcome[data-number="5"] [data-value="6"],
+#outcome[data-number="5"] [data-value="8"],
+#outcome[data-number="5"] [data-value="4"],
+#outcome[data-number="6"] [data-value="0"],
+#outcome[data-number="6"] [data-value="3"],
+#outcome[data-number="6"] [data-value="6"],
+#outcome[data-number="6"] [data-value="2"],
+#outcome[data-number="6"] [data-value="5"],
+#outcome[data-number="6"] [data-value="8"] {
+	background-color: black;
 }
