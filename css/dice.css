@@ -12,7 +12,6 @@ body {
   text-align: center;
   text-transform: uppercase;
   color: #333;
-	padding-top: 100px;
 }
 
 html,
@@ -23,8 +22,12 @@ body {
 #outcome {
 	width: 420px;
 	height: 420px;
-	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 	cursor: pointer;
+	margin-left: -210px;
+	margin-top: -210px;
 }
 
 #outcome div {
@@ -34,11 +37,6 @@ body {
 	background-color: #EEE;
 	border-radius: 100%;
 	margin: 20px;
-}
-
-#outcome [data-value="1"],
-#outcome [data-value="7"] {
-	/*background-color: transparent;*/
 }
 
 #outcome[data-number="1"] [data-value="4"],
@@ -63,4 +61,21 @@ body {
 #outcome[data-number="6"] [data-value="5"],
 #outcome[data-number="6"] [data-value="8"] {
 	background-color: black;
+}
+
+@media (max-width: 420px) {
+
+	#outcome {
+		width: 300px;
+		height: 300px;
+		margin-left: -150px;
+		margin-top: -150px;
+	}
+
+	#outcome div {
+		width: 80px;
+		height: 80px;
+		margin: 10px;
+	}
+
 }
