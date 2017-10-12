@@ -3,14 +3,9 @@
   margin: 0;
 }
 
-html {
-	overflow-y: hidden;
-}
-
 body {
   font-family: sans-serif;
   text-align: center;
-  text-transform: uppercase;
   color: #333;
 }
 
@@ -34,14 +29,15 @@ body {
 	float: left;
 	width: 100px;
 	height: 100px;
-	background-color: #EEE;
 	border-radius: 100%;
 	margin: 20px;
+	border: solid 2px black;
+	box-sizing: border-box;
 }
 
 #outcome[data-number="1"] [data-value="4"],
-#outcome[data-number="2"] [data-value="0"],
-#outcome[data-number="2"] [data-value="8"],
+#outcome[data-number="2"] [data-value="2"],
+#outcome[data-number="2"] [data-value="6"],
 #outcome[data-number="3"] [data-value="0"],
 #outcome[data-number="3"] [data-value="4"],
 #outcome[data-number="3"] [data-value="8"],
