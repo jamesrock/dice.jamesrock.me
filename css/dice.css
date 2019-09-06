@@ -59,6 +59,36 @@ body {
 	background-color: black;
 }
 
+.one:after {
+    content: "\2680 \FE0E"
+  }
+}
+
+.two:after {
+    content: "\2681 \FE0E"
+  }
+}
+
+.three:after {
+    content: "\2682 \FE0E"
+  }
+}
+
+.four:after {
+    content: "\2683 \FE0E"
+  }
+}
+
+.five:after {
+    content: "\2684 \FE0E"
+  }
+}
+
+.six:after {
+    content: "\2685 \FE0E"
+  }
+}
+
 @media (max-width: 420px) {
 
 	#outcome {

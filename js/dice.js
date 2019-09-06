@@ -35,7 +35,7 @@
 
 					outcome = newOutcome;
 
-					outcomeNode.setAttribute("data-number", outcome);
+					outcomeNode.setAttribute('data-number', outcome);
 
 					time = (time + 10);
 
