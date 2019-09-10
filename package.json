@@ -1,0 +1,25 @@
+{
+  "name": "dice.jamesrock.me",
+  "version": "1.0.0",
+  "description": "dice",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch scss/dice.scss css/dice.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesrock/dice.jamesrock.me.git"
+  },
+  "keywords": [
+    "dice"
+  ],
+  "author": "jamesrock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesrock/dice.jamesrock.me/issues"
+  },
+  "homepage": "https://github.com/jamesrock/dice.jamesrock.me#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
