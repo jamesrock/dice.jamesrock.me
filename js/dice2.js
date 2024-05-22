@@ -157,7 +157,7 @@
 	// console.log(dice1);
 	// console.log(dice2);
 
-	rollBtn.addEventListener('click', function(e) {
+	tableNode.addEventListener('click', function(e) {
 
 		if(!dice1.rolling&&!dice2.rolling) {
 			dice1.roll();

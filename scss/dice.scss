@@ -30,7 +30,7 @@ body {
 	border: solid 5px black;
 	transition: background-color .2s;
 	gap: 10px;
-	padding-bottom: 40px;
+	// padding-bottom: 40px;
 	box-sizing: border-box;
 
 	&[data-player="0"] {
@@ -51,12 +51,12 @@ body {
 
 .scores {
 	position: absolute;
-	bottom: 20px;
+	top: 65px;
 	right: 20px;
 	left: 20px;
-	font-size: 2rem;
+	font-size: 4rem;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .player {
