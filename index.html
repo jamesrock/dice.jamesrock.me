@@ -9,18 +9,19 @@
 		<link rel="stylesheet" href="/css/dice.css" />
 	</head>
 	<body>
-		<div id="outcome">
-			<div data-value="0"></div>
-			<div data-value="1"></div>
-			<div data-value="2"></div>
-			<div data-value="3"></div>
-			<div data-value="4"></div>
-			<div data-value="5"></div>
-			<div data-value="6"></div>
-			<div data-value="7"></div>
-			<div data-value="8"></div>
+		<div class="table" id="table" data-player="0">
+			<div class="dice" id="d1"></div>
+			<div class="dice" id="d2"></div>
+			<div class="scores" id="scores">
+				<div class="player" id="playerScore"></div>
+				<div class="oppo" id="oppoScore"></div>
+			</div>
+		</div>
+		<div class="controls">
+			<button id="roll">ROLL</button>
+			<!-- <button id="pass">PASS</button> -->
 		</div>
 		<script src="http://js.jamesrock.me/ROCK-8.0.js"></script>
-		<script src="/js/dice.js"></script>
+		<script src="/js/dice2.js"></script>
 	</body>
 </html>

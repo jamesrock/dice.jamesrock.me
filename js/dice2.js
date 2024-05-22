@@ -92,32 +92,21 @@
 
 			setTimeout(function() {
 
-				nextPlayer();
+				nextPlayer(true);
 
 			}, 500);
 
 		}
 		else {
 
-			runners[player] += (dice1.value + dice2.value);
-
 			if(player===1) {
 
-				setTimeout(function() {
+				players[0] -= (dice1.value + dice2.value);
 
-					if(ROCK.MATH.random(1, 6)===6) {
+			}
+			else {
 
-						nextPlayer(true);
-
-					}
-					else {
-
-						dice1.roll();
-						dice2.roll();
-
-					};
-
-				}, 1000);
+				players[0] += (dice1.value + dice2.value);
 
 			};
 
@@ -130,40 +119,26 @@
 	dice2 = new Dice('d2', rolled),
 	tableNode = document.getElementById('table'),
 	rollBtn = document.getElementById('roll'),
-	passBtn = document.getElementById('pass'),
+	// passBtn = document.getElementById('pass'),
 	scoreBoard = document.getElementById('scores'),
 	playerScoreBoard = document.getElementById('playerScore'),
 	oppoScoreBoard = document.getElementById('oppoScore'),
 	player = 0,
-	players = [0, 0],
-	runners = [0, 0],
-	nextPlayer = function(saveScore) {
+	players = [0],
+	nextPlayer = function() {
 
-		if(saveScore) {
-			console.log('pass!');
-			players[player] += runners[player];
-		};
-
-		runners[player] = 0;
 		player = (player === 0 ? 1 : 0);
 		tableNode.setAttribute('data-player', player);
 		logScore();
 
 		if(player===1) {
 
-			passBtn.setAttribute('disabled', 'disabled');
-
-			setTimeout(function() {
-
-				dice1.roll();
-				dice2.roll();
-
-			}, 1000);
+			// passBtn.setAttribute('disabled', 'disabled');
 
 		}
 		else {
 
-			passBtn.removeAttribute('disabled');
+			// passBtn.removeAttribute('disabled');
 
 		};
 
@@ -171,10 +146,8 @@
 	logScore = function() {
 
 		// console.log(`player: ${player}`);
-		var score = `${players[0]} / ${players[1]} (${runners[player]})`;
-		// scoreBoard.innerHTML = score;
-		playerScoreBoard.innerHTML = `${players[0]} (${runners[0]})`;
-		oppoScoreBoard.innerHTML = `${players[1]} (${runners[1]})`;
+		var score = `${players[0]}`;
+		playerScoreBoard.innerHTML = score;
 		console.log(score);
 
 	};
@@ -195,11 +168,11 @@
 
 	});
 
-	passBtn.addEventListener('click', function(e) {
-
-		nextPlayer(true);
-		e.preventDefault();
-
-	});
+	// passBtn.addEventListener('click', function(e) {
+	//
+	// 	nextPlayer(true);
+	// 	e.preventDefault();
+	//
+	// });
 
 })();

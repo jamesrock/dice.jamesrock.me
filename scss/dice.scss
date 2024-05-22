@@ -6,7 +6,8 @@
 body {
 	font-family: sans-serif;
 	text-align: center;
-	color: #333;
+	color: #111;
+	padding-top: 50px;
 }
 
 html,
@@ -14,97 +15,84 @@ body {
 	height: 100%;
 }
 
-#outcome {
-	width: 420px;
-	height: 420px;
+.dice {
+	font-size: 170px;
+}
+
+.table {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 500px;
+	height: 500px;
+	margin: 0 auto;
+	border: solid 5px black;
+	transition: background-color .2s;
+	gap: 10px;
+	padding-bottom: 40px;
+	box-sizing: border-box;
+
+	&[data-player="0"] {
+		background-color: white;
+		color: black;
+	}
+
+	&[data-player="1"] {
+		background-color: black;
+		color: white;
+	}
+
+}
+
+.controls {
+	padding-top: 30px;
+}
+
+.scores {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	bottom: 20px;
+	right: 20px;
+	left: 20px;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.player {
+
+	[data-player="0"] & {
+		font-weight: bold;
+	}
+
+}
+
+.oppo {
+	text-align: right;
+
+	[data-player="1"] & {
+		font-weight: bold;
+	}
+
+}
+
+button {
+	background-color: brown;
+	color: white;
+	padding: 15px 30px;
+	border: 0;
+	border-radius: 5px;
+	font-size: 1.5rem;
 	cursor: pointer;
-	margin-left: -210px;
-	margin-top: -210px;
+	font-weight: bold;
 
-	div {
-		float: left;
-		width: 100px;
-		height: 100px;
-		border-radius: 100%;
-		margin: 20px;
-		border: solid 2px black;
-		box-sizing: border-box;
+	&:hover {
+		background-color: maroon;
 	}
 
-	&:after {
-		display: block;
-		position: absolute;
-		bottom: -10px;
-		right: -10px;
-		font-size: 30px;
-	}
-
-}
-
-#outcome[data-number="1"] [data-value="4"],
-#outcome[data-number="2"] [data-value="2"],
-#outcome[data-number="2"] [data-value="6"],
-#outcome[data-number="3"] [data-value="0"],
-#outcome[data-number="3"] [data-value="4"],
-#outcome[data-number="3"] [data-value="8"],
-#outcome[data-number="4"] [data-value="0"],
-#outcome[data-number="4"] [data-value="2"],
-#outcome[data-number="4"] [data-value="6"],
-#outcome[data-number="4"] [data-value="8"],
-#outcome[data-number="5"] [data-value="0"],
-#outcome[data-number="5"] [data-value="2"],
-#outcome[data-number="5"] [data-value="6"],
-#outcome[data-number="5"] [data-value="8"],
-#outcome[data-number="5"] [data-value="4"],
-#outcome[data-number="6"] [data-value="0"],
-#outcome[data-number="6"] [data-value="3"],
-#outcome[data-number="6"] [data-value="6"],
-#outcome[data-number="6"] [data-value="2"],
-#outcome[data-number="6"] [data-value="5"],
-#outcome[data-number="6"] [data-value="8"] {
-	background-color: black;
-}
-
-#outcome[data-number="1"]:after {
-	content: "\2680 \FE0E"
-}
-
-#outcome[data-number="2"]:after {
-	content: "\2681 \FE0E"
-}
-
-#outcome[data-number="3"]:after {
-	content: "\2682 \FE0E"
-}
-
-#outcome[data-number="4"]:after {
-	content: "\2683 \FE0E"
-}
-
-#outcome[data-number="5"]:after {
-	content: "\2684 \FE0E"
-}
-
-#outcome[data-number="6"]:after {
-	content: "\2685 \FE0E"
-}
-
-@media (max-width: 420px) {
-
-	#outcome {
-		width: 300px;
-		height: 300px;
-		margin-left: -150px;
-		margin-top: -150px;
-	}
-
-	#outcome div {
-		width: 80px;
-		height: 80px;
-		margin: 10px;
+	&[disabled] {
+		opacity: 0.5;
+		pointer-events: none;
 	}
 
 }
